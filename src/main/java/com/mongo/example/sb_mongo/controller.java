@@ -43,13 +43,13 @@ public class controller {
         return ResponseEntity.ok(studentList);
     }
 
-    @GetMapping("/getAge")
-    @RequestMapping(value = "/getAge/{age}")
-    public ResponseEntity<?> getStudentWith(@PathVariable Integer age){
-        Query ageQuery= Query
-                .query(Criteria.where("age").gt(age));
-        System.out.println(age);
-        List<Student> studentList=this.mongoTemplate.find(ageQuery,Student.class);
+    @GetMapping("/getName")
+    @RequestMapping(value = "/getName/{name}")
+    public ResponseEntity<?> getStudentWithName(@PathVariable String name){
+        Query nameQuery= Query
+                .query(Criteria.where("Name").is(name));
+        System.out.println(name);
+        List<Student> studentList=this.mongoTemplate.find(nameQuery,Student.class);
         return ResponseEntity.ok(studentList);
     }
 
