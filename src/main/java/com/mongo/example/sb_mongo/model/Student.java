@@ -1,16 +1,17 @@
 package com.mongo.example.sb_mongo.model;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Students")
 public class Student {
     int id;
+    @Indexed
     String Name;
+    @Indexed
     int age;
     String city;
-    public Student(){
-
-    }
+    public Student(){}
 
 
     public Student(int id, String name, int age, String city) {
